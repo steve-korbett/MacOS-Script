@@ -7,15 +7,18 @@ cd ~/Work
 git clone https://github.com/vinceliuice/Mojave-gtk-theme.git
 cd Mojave-gtk-theme/
 ./install.sh
+gsettings set org.gnome.desktop.interface gtk-theme 'Mojave-dark'
 cd ~/Work
 git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
 cd la-capitaine-icon-theme/
 yes | ./configure
+gsettings set org.gnome.desktop.interface icon-theme 'la-capitaine-icon-theme'
 cd ~/Work
 sudo cp -R la-capitaine-icon-theme /usr/share/icons/
 git clone https://github.com/micheleg/dash-to-dock.git
 cd dash-to-dock/
 make && make install
-killall -3 gnome-shell
-wait 20
-gnome-tweaks
+gnome-extensions enable dash-to-dock@micxgx.gmail.com
+#killall -3 gnome-shell
+#wait 20
+#gnome-tweaks
